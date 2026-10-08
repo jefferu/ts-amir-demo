@@ -144,12 +144,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             {/* Main Visual Container */}
             <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-slate-800/40 to-slate-900/80 shadow-2xl backdrop-blur-md p-3 group">
               
-              {/* High Quality Tennis Action Imagery */}
-              <div className="relative h-[430px] w-full rounded-2xl overflow-hidden bg-slate-900">
+              {/* High Quality Authentic ATP Certified Coach Imagery */}
+              <div className="relative h-[480px] sm:h-[500px] w-full rounded-2xl overflow-hidden bg-slate-900">
                 <img
-                  src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=85"
-                  alt="Tennisschule Amir Training"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
+                  src={getAssetPath('/images/amir-atp-certificate.jpg')}
+                  alt="Cheftrainer Amir Reza - ATP A-Level Zertifizierung"
+                  className="w-full h-full object-cover object-[center_18%] group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
