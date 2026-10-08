@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jefferu.github.io/ts-amir-demo'),
   title: 'Tennisschule Amir | Tennistraining & Camps in Darmstadt & Weiterstadt',
   description:
     'Professionelles Tennistraining für Kinder, Jugendliche und Erwachsene. Geleitet von Cheftrainer Amir Reza (Davis Cup Spieler, ATP A-Lizenz & Rafa Nadal Academy Talent Scout). Offizieller Partner der SG Weiterstadt.',
@@ -37,8 +40,12 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: `${basePath}/favicon.png?v=3`, type: 'image/png' },
+      { url: `${basePath}/favicon.ico?v=3` },
+    ],
+    shortcut: `${basePath}/favicon.png?v=3`,
+    apple: `${basePath}/favicon.png?v=3`,
   },
 };
 
@@ -51,13 +58,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
   return (
     <html lang="de" className="scroll-smooth">
       <head>
-        <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
-        <link rel="apple-touch-icon" href={`${basePath}/favicon.png`} />
+        <link rel="icon" type="image/png" href={`${basePath}/favicon.png?v=3`} />
+        <link rel="shortcut icon" href={`${basePath}/favicon.png?v=3`} />
+        <link rel="apple-touch-icon" href={`${basePath}/favicon.png?v=3`} />
       </head>
       <body className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-tennis-accent selection:text-slate-950">
         <ErrorBoundary>
