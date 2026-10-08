@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { ArrowUp, Heart, Phone, Mail, MapPin } from 'lucide-react';
-import { getAssetPath } from '@/lib/utils';
 
 /**
  * Standard application footer with legal links, contact shortcuts, and back-to-top button.
@@ -22,12 +21,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="h-11 w-11 flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={getAssetPath('/images/logo.png')}
-                  alt="Tennisschule Amir Logo"
-                  className="w-full h-full object-contain filter drop-shadow-md"
-                />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-court-500 to-tennis-500 flex items-center justify-center text-slate-950 font-black text-lg">
+                TA
               </div>
               <span className="text-white font-extrabold text-base tracking-tight">
                 TENNISSCHULE <span className="text-tennis-accent">AMIR</span>
