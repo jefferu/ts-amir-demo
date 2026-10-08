@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, Trophy, PhoneCall } from 'lucide-react';
 import { STATS } from '@/data/tennisData';
+import { getAssetPath } from '@/lib/utils';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -167,8 +168,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 {/* Floating Bottom Card */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-xl">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-court-800 border border-tennis-400/30 flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-6 h-6 text-tennis-accent" />
+                    <div className="w-12 h-12 rounded-xl bg-slate-950/80 border border-tennis-400/30 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
+                      <img
+                        src={getAssetPath('/images/logo.png')}
+                        alt="Tennisschule Amir"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white leading-tight">

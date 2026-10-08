@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Calendar, Send, User, Mail, Phone, MapPin, Sparkles } from 'lucide-react';
 import { logger } from '@/lib/logger';
+import { getAssetPath } from '@/lib/utils';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -140,17 +141,23 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
             ) : (
               /* Booking Form */
               <div>
-                <div className="mb-6">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tennis-accent/10 text-tennis-accent text-xs font-bold uppercase tracking-wider mb-2">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    Unverbindliche Buchungsanfrage
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="w-12 h-12 flex-shrink-0">
+                    <img
+                      src={getAssetPath('/images/logo.png')}
+                      alt="Tennisschule Amir Logo"
+                      className="w-full h-full object-contain filter drop-shadow-md"
+                    />
                   </div>
-                  <h3 className="text-2xl font-black text-white tracking-tight">
-                    Schnupperstunde oder Kurs buchen
-                  </h3>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Tennisschule Amir • SG Weiterstadt & Pfungstadt
-                  </p>
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-tennis-accent/10 text-tennis-accent text-xs font-bold uppercase tracking-wider mb-1">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      Unverbindliche Buchungsanfrage
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight">
+                      Schnupperstunde oder Kurs buchen
+                    </h3>
+                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
