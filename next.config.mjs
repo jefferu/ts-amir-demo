@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let repo = '';
 if (isGithubActions && process.env.GITHUB_REPOSITORY) {

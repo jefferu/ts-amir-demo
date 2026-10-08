@@ -1,10 +1,5 @@
 import { ProgramTier, PricingPlan, CoachProfile, AchievementItem, Testimonial } from '@/lib/types';
 
-/**
- * Authentic data from Tennisschule Amir (ts-amir.de),
- * curated with modern presentation hierarchy inspired by Living For Tennis.
- */
-
 export const COACH_DATA: CoachProfile = {
   name: "Amir Reza",
   role: "Cheftrainer & Gründer der Tennisschule Amir",
@@ -90,7 +85,7 @@ export const PROGRAMS: ProgramTier[] = [
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
-  // Winter 2026/2027 (SG Weiterstadt)
+
   {
     id: "winter-kids",
     title: "Kids Ballschule (5–8 Jahre)",
@@ -150,7 +145,6 @@ export const PRICING_PLANS: PricingPlan[] = [
     ]
   },
 
-  // Sommer 2026 (SG Weiterstadt)
   {
     id: "summer-kids",
     title: "Kids Ballschule (5–8 Jahre)",
@@ -210,7 +204,6 @@ export const PRICING_PLANS: PricingPlan[] = [
     ]
   },
 
-  // Privattraining & Specials
   {
     id: "private-card-10",
     title: "Privattraining 10er-Karte",
@@ -341,3 +334,4 @@ export const STATS = [
   { label: "Camp-Teilnehmer pro Jahr", value: "100+", suffix: "Spieler" },
   { label: "ATP & Davis-Cup Hintergrund", value: "100%", suffix: "Qualität" },
 ];
+

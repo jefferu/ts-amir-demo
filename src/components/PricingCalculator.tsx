@@ -10,12 +10,6 @@ interface PricingCalculatorProps {
   onSelectPlan: (plan: PricingPlan) => void;
 }
 
-/**
- * Interactive pricing matrix with season toggling (Winter vs. Summer vs. Private).
- * Accurately displays SG Weiterstadt member rates, hall fee inclusions, and trainer ratios.
- *
- * @param onSelectPlan Callback when user clicks to reserve or inquire about a plan.
- */
 export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPlan }) => {
   const [activeSeason, setActiveSeason] = useState<'winter' | 'summer' | 'private'>('winter');
 
@@ -23,12 +17,11 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
 
   return (
     <section id="preise" className="py-24 bg-slate-950 relative overflow-hidden">
-      {/* Background Court Ambient Glow */}
+
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-700/10 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Heading */}
+
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tennis-400/10 border border-tennis-400/20 text-tennis-300 text-xs font-bold uppercase tracking-wider mb-4">
             Transparente Konditionen
@@ -42,7 +35,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
           </p>
         </div>
 
-        {/* Season Selector Tabs */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
             <button
@@ -78,7 +70,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
             {filteredPlans.map((plan, idx) => (
@@ -94,7 +85,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                     : 'bg-slate-900/60 border border-white/10 hover:border-white/20'
                 }`}
               >
-                {/* Featured Pill */}
+
                 {plan.featured && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-tennis-accent text-slate-950 text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5" />
@@ -103,7 +94,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                 )}
 
                 <div>
-                  {/* Plan Header */}
+
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold text-tennis-400 uppercase tracking-wider">
                       {plan.targetGroup}
@@ -118,7 +109,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                     {plan.title}
                   </h3>
 
-                  {/* Pricing Display */}
                   <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-white/10">
                     {plan.price === 'Kostenlos' ? (
                       <span className="text-4xl font-black text-white">Kostenlos</span>
@@ -134,7 +124,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                     )}
                   </div>
 
-                  {/* Key Parameters */}
                   <div className="grid grid-cols-2 gap-2 mb-6 p-3 rounded-xl bg-white/[0.03] border border-white/5 text-[11px]">
                     <div>
                       <span className="text-slate-400 block font-medium">Gruppengröße:</span>
@@ -146,7 +135,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                     </div>
                   </div>
 
-                  {/* Included Perks List */}
                   <div className="space-y-3 mb-8">
                     {plan.includedDetails.map((detail) => (
                       <div key={detail} className="flex items-start gap-2.5 text-xs text-slate-300 font-medium">
@@ -159,7 +147,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
                   </div>
                 </div>
 
-                {/* Card Action Button */}
                 <button
                   onClick={() => onSelectPlan(plan)}
                   className={`w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${
@@ -176,7 +163,6 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
           </AnimatePresence>
         </div>
 
-        {/* Notice Box for SG Weiterstadt */}
         <div className="mt-12 p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-start gap-3">
             <HelpCircle className="w-5 h-5 text-tennis-400 flex-shrink-0 mt-0.5" />
@@ -184,7 +170,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
               <span className="font-bold text-white block mb-0.5">
                 Hinweis zur Kooperation mit der SG Weiterstadt:
               </span>
-              Ab der Wintersaison übernimmt die Tennisschule Amir die gesamte sportliche Leitung und das Vereinstraining der SG Weiterstadt. 
+              Ab der Wintersaison übernimmt die Tennisschule Amir die gesamte sportliche Leitung und das Vereinstraining der SG Weiterstadt.
               Fragen zur Vereinsmitgliedschaft und Spielberechtigung beantwortet der Vorstand gerne unter <a href="mailto:tennis@sg-weiterstadt.de" className="text-tennis-accent underline">tennis@sg-weiterstadt.de</a>.
             </div>
           </div>
@@ -200,3 +186,4 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPl
     </section>
   );
 };
+

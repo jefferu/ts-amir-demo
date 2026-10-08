@@ -8,12 +8,6 @@ interface CampsAndEventsProps {
   onBookCamp: () => void;
 }
 
-/**
- * Camps & Holiday Clinics feature section.
- * Highlights the high-volume holiday camps, structured daily schedules, and full catering at SG Weiterstadt.
- *
- * @param onBookCamp Triggers booking modal with camp interest pre-selected.
- */
 export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) => {
   const campPerks = [
     {
@@ -40,20 +34,17 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
 
   return (
     <section id="camps" className="py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden border-t border-white/5">
-      {/* Background Accent Gradients */}
+
       <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-tennis-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Banner Grid */}
+
         <div className="rounded-3xl bg-slate-900/90 border border-white/15 p-8 sm:p-12 lg:p-16 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
-          
-          {/* Subtle Tennis Court Line Motif */}
+
           <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full border border-tennis-400/10 pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content */}
+
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tennis-accent/10 border border-tennis-accent/30 text-tennis-accent text-xs font-bold uppercase tracking-wider mb-6">
                 <Calendar className="w-3.5 h-3.5" />
@@ -65,11 +56,10 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
               </h2>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-                In den Schulferien verwandeln wir die Tennisplätze in ein echtes Tennis-Camp! 
+                In den Schulferien verwandeln wir die Tennisplätze in ein echtes Tennis-Camp!
                 Mit täglichem Schlagtraining, Taktikschulung, Athletikübungen und viel Action schaffen wir die perfekte Kombination aus sportlicher Weiterentwicklung und Ferienspaß. Sowohl für Anfänger als auch für ambitionierte Turnierspieler.
               </p>
 
-              {/* 4 Feature Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {campPerks.map((perk) => {
                   const Icon = perk.icon;
@@ -87,7 +77,6 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
                 })}
               </div>
 
-              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <button
                   onClick={onBookCamp}
@@ -102,7 +91,6 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
               </div>
             </div>
 
-            {/* Right Visual Highlight */}
             <div className="lg:col-span-5 relative">
               <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-950 aspect-[4/3] relative group">
                 <img
@@ -111,8 +99,7 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                
-                {/* Floating Bottom Card */}
+
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 rounded-lg bg-court-800 text-tennis-accent">
@@ -135,3 +122,4 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
     </section>
   );
 };
+

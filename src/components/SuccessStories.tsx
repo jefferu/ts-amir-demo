@@ -5,19 +5,14 @@ import { motion } from 'framer-motion';
 import { Trophy, Star, Medal, Quote, UserCheck } from 'lucide-react';
 import { ACHIEVEMENTS, TESTIMONIALS } from '@/data/tennisData';
 
-/**
- * Social Proof & Tournament Hall of Fame section.
- * Merges customer reviews (modeled on Living For Tennis) with real tournament records from ts-amir.de.
- */
 export const SuccessStories: React.FC = () => {
   return (
     <section id="erfolge" className="py-24 bg-slate-950 relative overflow-hidden border-t border-white/5">
-      {/* Background Accent Gradients */}
+
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-court-800/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tennis-400/10 border border-tennis-400/20 text-tennis-300 text-xs font-bold uppercase tracking-wider mb-4">
             Messbare Resultate
@@ -31,7 +26,6 @@ export const SuccessStories: React.FC = () => {
           </p>
         </div>
 
-        {/* Tournament Highlights Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {ACHIEVEMENTS.map((achieve, idx) => (
             <motion.div
@@ -80,7 +74,6 @@ export const SuccessStories: React.FC = () => {
           ))}
         </div>
 
-        {/* Testimonials Sub-section (What People Are Saying) */}
         <div className="pt-12 border-t border-white/10">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -102,7 +95,7 @@ export const SuccessStories: React.FC = () => {
                 className="p-8 rounded-3xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex flex-col justify-between"
               >
                 <div>
-                  {/* Star Rating */}
+
                   <div className="flex items-center gap-1 mb-4 text-tennis-accent">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-tennis-accent text-tennis-accent" />
@@ -132,3 +125,4 @@ export const SuccessStories: React.FC = () => {
     </section>
   );
 };
+

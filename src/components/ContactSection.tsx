@@ -5,10 +5,6 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Shield } from 'lucide-react';
 import { logger } from '@/lib/logger';
 
-/**
- * Contact and Venue section adhering to ts-amir.de impressum guidelines,
- * combined with Living For Tennis's high-converting "Let's start improving your game!" CTA banner.
- */
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formState, setFormState] = useState({
@@ -30,12 +26,11 @@ export const ContactSection: React.FC = () => {
 
   return (
     <section id="kontakt" className="py-24 bg-slate-950 relative overflow-hidden border-t border-white/5">
-      {/* Background Accent Gradients */}
+
       <div className="absolute bottom-0 left-1/3 w-[600px] h-[350px] bg-emerald-800/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Living For Tennis Signature Callout Banner */}
+
         <div className="mb-20 rounded-3xl bg-gradient-to-r from-court-950 via-slate-900 to-court-950 border border-tennis-400/20 p-8 sm:p-12 text-center relative overflow-hidden shadow-glow">
           <div className="max-w-2xl mx-auto">
             <span className="text-xs uppercase font-extrabold tracking-widest text-tennis-accent mb-3 block">
@@ -66,10 +61,8 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Contact Details & Direct Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          {/* Left: Contact Info & Club Venues */}
+
           <div className="lg:col-span-5 space-y-6">
             <div>
               <h3 className="text-2xl font-black text-white tracking-tight mb-2">
@@ -80,7 +73,6 @@ export const ContactSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Venue Card 1: SG Weiterstadt */}
             <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-4">
               <div className="p-3 rounded-xl bg-tennis-accent/10 text-tennis-accent flex-shrink-0">
                 <MapPin className="w-5 h-5" />
@@ -96,7 +88,6 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct Line */}
             <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-4">
               <div className="p-3 rounded-xl bg-court-500/20 text-tennis-300 flex-shrink-0">
                 <Phone className="w-5 h-5" />
@@ -112,7 +103,6 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Email */}
             <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-4">
               <div className="p-3 rounded-xl bg-white/5 text-slate-300 flex-shrink-0">
                 <Mail className="w-5 h-5" />
@@ -127,7 +117,6 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Legal Notice */}
             <div className="p-5 rounded-2xl bg-slate-900/60 border border-white/5 text-[11px] text-slate-400 space-y-1">
               <div className="font-bold text-slate-300 flex items-center gap-1.5 mb-2">
                 <Shield className="w-3.5 h-3.5 text-tennis-400" />
@@ -139,7 +128,6 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: Message Form */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/80 border border-white/15 backdrop-blur-xl shadow-2xl">
               <h3 className="text-xl font-bold text-white mb-1">
@@ -263,3 +251,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+

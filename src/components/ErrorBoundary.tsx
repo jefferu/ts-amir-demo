@@ -14,25 +14,15 @@ interface State {
   error?: Error;
 }
 
-/**
- * Standard Error Boundary component to safeguard the application from client-side runtime crashes.
- * Adheres to strict enterprise resilience guidelines.
- */
 export class ErrorBoundary extends Component<Props, State> {
   public state: State = {
     hasError: false,
   };
 
-  /**
-   * Updates state so the next render will show the fallback UI.
-   */
   public static getDerivedStateFromError(error: Error): State {
     return { hasError: true, error };
   }
 
-  /**
-   * Catches errors from any component in the tree and records them to the structured logger.
-   */
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     logger.error('Uncaught error caught in React ErrorBoundary', {
       errorName: error.name,
@@ -41,9 +31,6 @@ export class ErrorBoundary extends Component<Props, State> {
     });
   }
 
-  /**
-   * Resets error state to allow recovery without complete page reload.
-   */
   private handleReset = () => {
     this.setState({ hasError: false, error: undefined });
   };
@@ -79,3 +66,4 @@ export class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+

@@ -12,14 +12,6 @@ interface BookingModalProps {
   preselectedProgram?: string;
 }
 
-/**
- * Interactive Lead Generation & Trial Session Booking Modal.
- * Captures user contact details, playing level, and preferred course with client-side verification.
- *
- * @param isOpen Visibility state.
- * @param onClose Dismissal callback.
- * @param preselectedProgram Optional program identifier to pre-populate.
- */
 export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
   isOpen,
   onClose,
@@ -38,14 +30,12 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Synchronize when preselected program prop updates
   useEffect(() => {
     if (preselectedProgram) {
       setFormData((prev) => ({ ...prev, program: preselectedProgram }));
     }
   }, [preselectedProgram]);
 
-  // Handle ESC key listener for accessibility
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -71,7 +61,6 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
         hasPhone: Boolean(formData.phone),
       });
 
-      // Simulate reliable server network roundtrip
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
@@ -91,7 +80,7 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-          {/* Backdrop Blur */}
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -100,7 +89,6 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
             className="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"
           />
 
-          {/* Modal Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -108,7 +96,7 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="relative w-full max-w-xl rounded-3xl bg-slate-900 border border-white/15 p-6 sm:p-8 shadow-2xl z-10 overflow-hidden"
           >
-            {/* Close Button */}
+
             <button
               onClick={onClose}
               className="absolute top-5 right-5 p-2 rounded-full bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
@@ -118,7 +106,7 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
             </button>
 
             {isSuccess ? (
-              /* Success Screen */
+
               <div className="text-center py-8">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center mb-6">
                   <CheckCircle className="w-10 h-10" />
@@ -139,7 +127,7 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                 </button>
               </div>
             ) : (
-              /* Booking Form */
+
               <div>
                 <div className="flex items-center gap-3.5 mb-6">
                   <div className="w-12 h-12 flex-shrink-0">
@@ -161,7 +149,7 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Select Program */}
+
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-1.5">
                       Gewünschtes Angebot:
@@ -192,7 +180,6 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                     </select>
                   </div>
 
-                  {/* Level & Location */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-bold text-slate-300 mb-1.5">
@@ -225,7 +212,6 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                     </div>
                   </div>
 
-                  {/* Personal Contact Details */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-bold text-slate-300 mb-1.5">
@@ -292,7 +278,6 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
@@ -321,3 +306,4 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
     </AnimatePresence>
   );
 };
+

@@ -4,9 +4,6 @@ import React from 'react';
 import { ArrowUp, Heart, Phone, Mail, MapPin } from 'lucide-react';
 import { getAssetPath } from '@/lib/utils';
 
-/**
- * Standard application footer with legal links, contact shortcuts, and back-to-top button.
- */
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,11 +12,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Top Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-          
-          {/* Brand Info */}
+
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 flex-shrink-0">
@@ -41,7 +36,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               Navigation
@@ -68,7 +62,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Training Locations */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               Trainingsorte
@@ -85,7 +78,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Direct Contact */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               Direktkontakt
@@ -108,7 +100,6 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-slate-500">
             &copy; 2026 Tennisschule Amir Reza. Alle Rechte vorbehalten. In Kooperation mit SG Weiterstadt & Rafa Nadal Academy.
@@ -132,3 +123,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+

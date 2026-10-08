@@ -1,6 +1,6 @@
 # 🎾 Tennisschule Amir – Modern Relaunch Demo
 
-Ein moderner Web-Relaunch für die **Tennisschule Amir** ([ts-amir.de](https://ts-amir.de/)), inspiriert von der klaren, athletischen Informationsarchitektur von [livingfortennis.com](https://livingfortennis.com/).
+Ein moderner Webauftritt für die **Tennisschule Amir** ([ts-amir.de](https://ts-amir.de/)) mit klarer, athletischer Informationsarchitektur.
 
 ---
 

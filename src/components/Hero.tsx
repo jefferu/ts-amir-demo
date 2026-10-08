@@ -10,30 +10,22 @@ interface HeroProps {
   onOpenBooking: () => void;
 }
 
-/**
- * Modern Hero section mirroring Living For Tennis's clean athletic aesthetic,
- * elevated with Google Antigravity glassmorphism, fluid typography, and authoritative ATP badges.
- *
- * @param onOpenBooking Callback to trigger the booking / trial session flow.
- */
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-36 sm:pt-42 lg:pt-44 pb-20 sm:pb-24 overflow-hidden bg-slate-950">
-      {/* Background Court Lighting & Radial Glow */}
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px]" />
         <div className="absolute top-1/3 -right-20 w-[450px] h-[450px] bg-tennis-500/10 rounded-full blur-[120px]" />
-        {/* Subtle Tennis Court Line Pattern */}
+
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column: Headlines & Call to Actions */}
+
           <div className="lg:col-span-7 text-center lg:text-left">
-            
-            {/* Pill Tag */}
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,7 +38,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </span>
             </motion.div>
 
-            {/* Primary Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -60,7 +51,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               hebt.
             </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +61,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               Unter der Leitung von Cheftrainer Amir Reza – ehemaliger Davis-Cup-Spieler und höchstzertifizierter ATP A-Lizenz Coach.
             </motion.p>
 
-            {/* Trust Points */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +81,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </span>
             </motion.div>
 
-            {/* Interactive CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,7 +103,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </a>
             </motion.div>
 
-            {/* Quick Stat Counter Bar */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -134,17 +121,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Visual Card with Glassmorphic Badges */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-5 relative"
           >
-            {/* Main Visual Container */}
+
             <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-slate-800/40 to-slate-900/80 shadow-2xl backdrop-blur-md p-3 group">
-              
-              {/* High Quality Authentic ATP Certified Coach Imagery */}
+
               <div className="relative h-[480px] sm:h-[500px] w-full rounded-2xl overflow-hidden bg-slate-900">
                 <img
                   src={getAssetPath('/images/amir-atp-certificate.jpg')}
@@ -152,8 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   className="w-full h-full object-cover object-[center_18%] group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                
-                {/* Integrated Top Badges Bar - No Overlap */}
+
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/15 text-xs font-bold text-white shadow-lg">
                     <ShieldCheck className="w-4 h-4 text-tennis-accent" />
@@ -165,7 +149,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   </div>
                 </div>
 
-                {/* Floating Bottom Card */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-xl">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-xl bg-slate-950/80 border border-tennis-400/30 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
@@ -194,3 +177,4 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
     </section>
   );
 };
+

@@ -1,6 +1,3 @@
-/**
- * Domain types for Tennisschule Amir web platform.
- */
 
 export interface ProgramTier {
   id: string;
@@ -59,3 +56,4 @@ export interface Testimonial {
   content: string;
   rating: number;
 }
+

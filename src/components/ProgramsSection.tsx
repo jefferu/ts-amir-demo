@@ -9,12 +9,6 @@ interface ProgramsSectionProps {
   onSelectProgram: (programId: string) => void;
 }
 
-/**
- * Three-tier offerings section directly modeled on Living For Tennis's signature layout.
- * Showcases Group Lessons, Private Coaching, and Camps with glassmorphic cards and clear CTAs.
- *
- * @param onSelectProgram Callback to pre-select a specific training format in the booking flow.
- */
 export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgram }) => {
   const getProgramIcon = (category: string) => {
     switch (category) {
@@ -31,13 +25,12 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
 
   return (
     <section id="programme" className="py-24 bg-slate-950 relative overflow-hidden">
-      {/* Subtle background glow */}
+
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-tennis-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -67,7 +60,6 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
           </motion.p>
         </div>
 
-        {/* 3-Column Program Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROGRAMS.map((program, idx) => (
             <motion.div
@@ -78,7 +70,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="group relative rounded-3xl bg-slate-900/60 border border-white/10 hover:border-tennis-400/40 backdrop-blur-md overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5"
             >
-              {/* Card Image Banner */}
+
               <div className="relative h-56 w-full overflow-hidden">
                 <img
                   src={program.image}
@@ -87,14 +79,12 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
 
-                {/* Badge Overlay */}
                 {program.badge && (
                   <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-tennis-400/30 text-xs font-bold text-tennis-300 shadow-md">
                     <span>{program.badge}</span>
                   </div>
                 )}
 
-                {/* Symmetrical Target Group & Category Icon Bar */}
                 <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between gap-3 h-10">
                   <div className="flex-1 min-w-0 flex items-center">
                     <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-lg bg-slate-950/80 text-white backdrop-blur-md border border-white/10 shadow-sm truncate">
@@ -107,7 +97,6 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
                 </div>
               </div>
 
-              {/* Card Content Body */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
@@ -120,7 +109,6 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
                     {program.description}
                   </p>
 
-                  {/* Feature Checkpoints */}
                   <div className="space-y-2.5 mb-8">
                     {program.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2.5 text-xs text-slate-300 font-medium">
@@ -133,7 +121,6 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
                   </div>
                 </div>
 
-                {/* Action CTA Button */}
                 <button
                   onClick={() => onSelectProgram(program.id)}
                   className="w-full py-3.5 px-4 rounded-xl bg-white/5 hover:bg-tennis-accent text-white hover:text-slate-950 font-bold text-xs uppercase tracking-wider border border-white/15 hover:border-tennis-accent transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-sm hover:shadow-glow"
@@ -150,3 +137,4 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
     </section>
   );
 };
+

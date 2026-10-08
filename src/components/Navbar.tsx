@@ -9,17 +9,10 @@ interface NavbarProps {
   onOpenBooking: (prefillProgram?: string) => void;
 }
 
-/**
- * Responsive navigation bar featuring glassmorphic design and direct access CTAs.
- * Implements sticky scrolling state detection for visual elevation.
- *
- * @param onOpenBooking Callback to trigger the interactive booking modal.
- */
 export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Monitor scroll offset to adjust background density for readability over dynamic content
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -47,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Branding */}
+
           <a href="#" className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-tennis-400 rounded-xl p-1">
             <div className="relative w-11 h-11 flex-shrink-0 transition-transform group-hover:scale-105">
               <img
@@ -67,7 +60,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </div>
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Hauptnavigation">
             {navLinks.map((link) => (
               <a
@@ -80,9 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             ))}
           </nav>
 
-          {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Quick Call */}
+
             <a
               href="tel:01624207661"
               className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-tennis-400"
@@ -92,7 +83,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <span>0162 - 420 76 61</span>
             </a>
 
-            {/* Primary Booking Button */}
             <button
               onClick={() => onOpenBooking()}
               className="inline-flex items-center gap-2 px-4 py-2 text-xs uppercase tracking-wider font-bold text-slate-950 bg-tennis-accent hover:bg-tennis-300 rounded-full shadow-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-tennis-400"
@@ -102,7 +92,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => onOpenBooking()}
@@ -122,7 +111,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -169,3 +157,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     </header>
   );
 };
+

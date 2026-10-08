@@ -4,10 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Award, Star, Trophy, Sparkles } from 'lucide-react';
 
-/**
- * Trust & Accreditation banner establishing authority and credentials.
- * Highlights official ATP certification, Rafa Nadal Academy partnership, and club alignments.
- */
 export const TrustBadges: React.FC = () => {
   const credentials = [
     {
@@ -83,3 +79,4 @@ export const TrustBadges: React.FC = () => {
     </section>
   );
 };
+

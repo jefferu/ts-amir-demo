@@ -49,10 +49,6 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Root Application Layout.
- * Uses high-performance native font stack to guarantee offline resilience and avoid external network font calls.
- */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,3 +69,4 @@ export default function RootLayout({
     </html>
   );
 }
+
