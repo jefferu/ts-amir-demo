@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, Trophy, PhoneCall } from 'lucide-react';
 import { STATS } from '@/data/tennisData';
+import { getAssetPath } from '@/lib/utils';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -17,7 +18,7 @@ interface HeroProps {
  */
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-slate-950">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-36 sm:pt-42 lg:pt-44 pb-20 sm:pb-24 overflow-hidden bg-slate-950">
       {/* Background Court Lighting & Radial Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px]" />
@@ -152,17 +153,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
-                {/* Floating Top Badge */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-bold text-white shadow-lg">
-                  <ShieldCheck className="w-4 h-4 text-tennis-accent" />
-                  <span>ATP A-Level Certified</span>
+                {/* Integrated Top Badges Bar - No Overlap */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/15 text-xs font-bold text-white shadow-lg">
+                    <ShieldCheck className="w-4 h-4 text-tennis-accent" />
+                    <span>ATP A-Level Certified</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-tennis-400/30 text-xs font-bold text-white shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-tennis-accent animate-ping" />
+                    <span>Saison 2026/27 frei</span>
+                  </div>
                 </div>
 
-                {/* Floating Bottom Card */}
+                {/* Floating Bottom Card with Official Emblem */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-xl">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-court-800 border border-tennis-400/30 flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-6 h-6 text-tennis-accent" />
+                    <div className="w-12 h-12 rounded-xl bg-slate-950/80 border border-tennis-400/30 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
+                      <img
+                        src={getAssetPath('/images/logo.png')}
+                        alt="Tennisschule Amir"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white leading-tight">
@@ -175,17 +186,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   </div>
                 </div>
               </div>
-
-              {/* Floating Quick Action Badge */}
-              <motion.div
-                initial={{ x: 20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute -top-4 -right-4 hidden sm:flex items-center gap-2 px-4 py-2 rounded-2xl bg-slate-900/95 border border-tennis-400/40 shadow-glow backdrop-blur-xl"
-              >
-                <div className="w-2.5 h-2.5 rounded-full bg-tennis-accent animate-ping" />
-                <span className="text-xs font-bold text-white">Wintersaison 2026/27 Plätze frei</span>
-              </motion.div>
             </div>
           </motion.div>
 

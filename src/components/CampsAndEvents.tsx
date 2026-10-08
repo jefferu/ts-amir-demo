@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Sun, Trophy, Utensils, Award, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 interface CampsAndEventsProps {
   onBookCamp: () => void;
@@ -115,8 +116,12 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
                 {/* Floating Bottom Card */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-court-800 text-tennis-accent">
-                      <Award className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-slate-950/80 border border-tennis-400/30 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
+                      <img
+                        src={getAssetPath('/images/logo.png')}
+                        alt="Tennisschule Amir"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-white">Oster- & Sommercamps</div>

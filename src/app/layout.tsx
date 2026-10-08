@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 /**
@@ -47,8 +51,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <html lang="de" className="scroll-smooth">
+      <head>
+        <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
+        <link rel="apple-touch-icon" href={`${basePath}/favicon.png`} />
+      </head>
       <body className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-tennis-accent selection:text-slate-950">
         <ErrorBoundary>
           {children}

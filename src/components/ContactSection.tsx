@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Shield } from 'lucide-react';
 import { logger } from '@/lib/logger';
+import { getAssetPath } from '@/lib/utils';
 
 /**
  * Contact and Venue section adhering to ts-amir.de impressum guidelines,
@@ -38,6 +39,13 @@ export const ContactSection: React.FC = () => {
         {/* Living For Tennis Signature Callout Banner */}
         <div className="mb-20 rounded-3xl bg-gradient-to-r from-court-950 via-slate-900 to-court-950 border border-tennis-400/20 p-8 sm:p-12 text-center relative overflow-hidden shadow-glow">
           <div className="max-w-2xl mx-auto">
+            <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <img
+                src={getAssetPath('/images/logo.png')}
+                alt="Tennisschule Amir Logo"
+                className="w-full h-full object-contain filter drop-shadow-md"
+              />
+            </div>
             <span className="text-xs uppercase font-extrabold tracking-widest text-tennis-accent mb-3 block">
               Bereit für dein bestes Tennis?
             </span>

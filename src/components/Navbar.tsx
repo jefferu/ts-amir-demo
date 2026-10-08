@@ -48,23 +48,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo / Branding */}
-          <a href="#" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-tennis-400 rounded-lg p-1">
-            <div className="h-10 flex items-center justify-center">
+          <a href="#" className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-tennis-400 rounded-xl p-1">
+            <div className="relative h-11 w-11 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center">
               <img
-                src={getAssetPath('/images/Logo-Amir.png')}
-                alt="Tennisschule Amir Logo"
-                className="h-9 w-auto object-contain filter brightness-110 drop-shadow-md group-hover:scale-105 transition-transform"
-                onError={(e) => {
-                  // Fallback to text initials if image load fails
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+                src={getAssetPath('/images/logo.png')}
+                alt="Tennisschule Amir"
+                className="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-extrabold text-base sm:text-lg tracking-tight leading-none">
+              <span className="text-white font-black text-base sm:text-lg tracking-tight leading-none">
                 TENNISSCHULE <span className="text-tennis-accent">AMIR</span>
               </span>
-              <span className="text-slate-400 text-[10px] tracking-wider uppercase font-semibold flex items-center gap-1 mt-0.5">
+              <span className="text-slate-400 text-[10px] tracking-wider uppercase font-bold flex items-center gap-1.5 mt-1">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-tennis-400 animate-pulse"></span>
                 ATP Coach & Rafa Nadal Scout
               </span>
