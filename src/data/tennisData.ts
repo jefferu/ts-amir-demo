@@ -40,7 +40,7 @@ export const PROGRAMS: ProgramTier[] = [
     id: "group-lessons",
     title: "Gruppentraining & Ballschule",
     subtitle: "Gemeinsam wachsen mit Gleichgesinnten",
-    ageGroup: "Kinder ab 5 J., Jugendliche & Erwachsene",
+    ageGroup: "Kinder ab 5 J. • Jugend • Erwachsene",
     description: "Ideal abgestimmte Kleingruppen (maximal 4 Spieler pro Platz). Erlernen moderner Schlagtechniken (Topspin, Slice, Aufschlagbiomechanik) in dynamischen Spielsituationen und ab 5 Teilnehmern mit 2 Trainern für maximale Ballkontakte.",
     features: [
       "Feste Kleingruppen: maximal 4 Spieler/innen pro Platz",
@@ -57,7 +57,7 @@ export const PROGRAMS: ProgramTier[] = [
     id: "private-lessons",
     title: "Privat- & Einzeltraining",
     subtitle: "Maximale Intensität & individuelle Analyse",
-    ageGroup: "Für alle Spielstärken (Anfänger bis Turnierspieler)",
+    ageGroup: "Alle Spielstärken (Hobby bis LK)",
     description: "100% Fokus auf Ihr Spiel. Gezielte Video- und Bewegungsanalyse, Korrektur von Schlagrhythmus und Beinarbeit, strategische Spielmuster sowie Matchvorbereitung mit Cheftrainer Amir Reza oder lizenzierten Co-Trainern.",
     features: [
       "1-zu-1 Intensivbetreuung oder Semi-Privat (2 Personen)",
@@ -74,7 +74,7 @@ export const PROGRAMS: ProgramTier[] = [
     id: "camps-clinics",
     title: "Feriencamps & Intensivtage",
     subtitle: "Ferien voller Tennis, Athletik & Teamgeist",
-    ageGroup: "Kinder & Jugendliche (6–17 J.) sowie Erwachsenen-Workshops",
+    ageGroup: "Jugend (6–17 J.) & Erwachsene",
     description: "Legendäre Sommer-, Oster- und Herbstcamps auf der Anlage der SG Weiterstadt. Mit über 100 Teilnehmern pro Saison bieten unsere Camps tägliches Techniktraining, Kondition, Matchpraxis, Mittagessen und Abschlussturnier.",
     features: [
       "Mehrtägige Feriencamps in den Oster- & Sommerferien",

@@ -94,12 +94,14 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
                   </div>
                 )}
 
-                {/* Age Group Pill */}
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-                  <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md bg-white/15 text-white backdrop-blur-sm">
-                    {program.ageGroup}
-                  </span>
-                  <div className="p-2 rounded-lg bg-slate-950/80 backdrop-blur-sm border border-white/10">
+                {/* Symmetrical Target Group & Category Icon Bar */}
+                <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between gap-3 h-10">
+                  <div className="flex-1 min-w-0 flex items-center">
+                    <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-lg bg-slate-950/80 text-white backdrop-blur-md border border-white/10 shadow-sm truncate">
+                      {program.ageGroup}
+                    </span>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/15 flex items-center justify-center flex-shrink-0 shadow-md text-tennis-accent">
                     {getProgramIcon(program.category)}
                   </div>
                 </div>

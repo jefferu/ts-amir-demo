@@ -56,10 +56,15 @@ export const AboutCoach: React.FC = () => {
                       "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
                 
+                {/* Davis Cup Floating Tag - 100% visible inside photo frame */}
+                <div className="absolute top-4 right-4 z-20 px-3.5 py-1.5 rounded-full bg-tennis-accent text-slate-950 font-black text-xs uppercase tracking-wider shadow-glow">
+                  Davis Cup Spieler
+                </div>
+
                 {/* Overlay Name Tag */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 z-10">
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="text-lg font-extrabold text-white">{COACH_DATA.name}</h3>
@@ -70,11 +75,6 @@ export const AboutCoach: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Davis Cup Floating Tag */}
-              <div className="absolute -top-3 -right-3 px-3.5 py-1.5 rounded-full bg-tennis-accent text-slate-950 font-black text-xs uppercase tracking-wider shadow-glow">
-                Davis Cup Spieler
               </div>
             </div>
 
