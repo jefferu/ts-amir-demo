@@ -45,7 +45,7 @@ export const PROGRAMS: ProgramTier[] = [
       "Inklusive Hallenplatzgebühr bei SG Weiterstadt"
     ],
     badge: "Beliebtestes Format",
-    image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
+    image: "/images/group-training.jpg",
     category: "group"
   },
   {
@@ -62,7 +62,7 @@ export const PROGRAMS: ProgramTier[] = [
       "Gezielte Turnier- und LK-Punkte-Vorbereitung"
     ],
     badge: "Schnellste Fortschritte",
-    image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
+    image: "/images/private-training.jpg",
     category: "private"
   },
   {
@@ -79,7 +79,7 @@ export const PROGRAMS: ProgramTier[] = [
       "Exklusive Sichtung für Rafa Nadal Academy Camps"
     ],
     badge: "Über 100 Camp-Teilnehmer jährlich",
-    image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
+    image: "/images/camp-training.jpg",
     category: "camp"
   }
 ];

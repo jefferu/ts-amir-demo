@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, Users, User, Flame } from 'lucide-react';
 import { PROGRAMS } from '@/data/tennisData';
+import { getAssetPath } from '@/lib/utils';
 
 interface ProgramsSectionProps {
   onSelectProgram: (programId: string) => void;
@@ -73,7 +74,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onSelectProgra
 
               <div className="relative h-56 w-full overflow-hidden">
                 <img
-                  src={program.image}
+                  src={getAssetPath(program.image)}
                   alt={program.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 brightness-90"
                 />

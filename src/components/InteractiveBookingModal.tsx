@@ -12,6 +12,10 @@ interface BookingModalProps {
   preselectedProgram?: string;
 }
 
+/**
+ * Modal dialog for booking trial sessions, camps, and seasonal tennis courses
+ * with GDPR-compliant data processing agreement.
+ */
 export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
   isOpen,
   onClose,
@@ -293,8 +297,17 @@ export const InteractiveBookingModal: React.FC<BookingModalProps> = ({
                         </>
                       )}
                     </button>
-                    <p className="text-[10px] text-slate-500 text-center mt-2">
-                      Ihre Daten werden vertraulich behandelt und nicht weitergegeben.
+                    <p className="text-[11px] text-slate-400 text-center mt-2 leading-relaxed">
+                      Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{' '}
+                      <a
+                        href={getAssetPath('/datenschutz')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tennis-accent underline hover:text-white"
+                      >
+                        Datenschutzerklärung
+                      </a>{' '}
+                      zu.
                     </p>
                   </div>
                 </form>

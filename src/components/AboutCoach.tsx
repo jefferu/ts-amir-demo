@@ -45,7 +45,7 @@ export const AboutCoach: React.FC = () => {
                   onError={(e) => {
 
                     (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80";
+                      getAssetPath("/images/coach-action.jpg");
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />

@@ -4,7 +4,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Shield } from 'lucide-react';
 import { logger } from '@/lib/logger';
+import { getAssetPath } from '@/lib/utils';
 
+/**
+ * Contact section providing direct phone, mail, and a GDPR-compliant inquiry form.
+ */
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formState, setFormState] = useState({
@@ -237,8 +241,17 @@ export const ContactSection: React.FC = () => {
                     <span>Nachricht jetzt absenden</span>
                   </button>
 
-                  <p className="text-[10px] text-slate-500 text-center">
-                    Ihre E-Mail wird vertraulich behandelt und nicht veröffentlicht.
+                  <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                    Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Angaben gemäß unserer{' '}
+                    <a
+                      href={getAssetPath('/datenschutz')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-tennis-accent underline hover:text-white"
+                    >
+                      Datenschutzerklärung
+                    </a>{' '}
+                    einverstanden.
                   </p>
                 </form>
               )}

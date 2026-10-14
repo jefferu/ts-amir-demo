@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Sun, Trophy, Utensils, Award, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 interface CampsAndEventsProps {
   onBookCamp: () => void;
@@ -94,7 +95,7 @@ export const CampsAndEvents: React.FC<CampsAndEventsProps> = ({ onBookCamp }) =>
             <div className="lg:col-span-5 relative">
               <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-950 aspect-[4/3] relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80"
+                  src={getAssetPath('/images/camp-training.jpg')}
                   alt="Tenniscamp Weiterstadt Impressionen"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
                 />

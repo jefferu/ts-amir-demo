@@ -4,6 +4,10 @@ import React from 'react';
 import { ArrowUp, Heart, Phone, Mail, MapPin } from 'lucide-react';
 import { getAssetPath } from '@/lib/utils';
 
+/**
+ * Footer component providing site navigation, trainer contact details,
+ * and legally required § 5 DDG Impressum & GDPR Datenschutz links.
+ */
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,13 +105,22 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] text-slate-500">
-            &copy; 2026 Tennisschule Amir Reza. Alle Rechte vorbehalten. In Kooperation mit SG Weiterstadt & Rafa Nadal Academy.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <p className="text-[11px] text-slate-500">
+              &copy; 2026 Tennisschule Amir Reza. Alle Rechte vorbehalten. In Kooperation mit SG Weiterstadt & Rafa Nadal Academy.
+            </p>
+            <span className="text-[10px] text-emerald-400 font-medium px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              100% DSGVO-konform • Cookie-frei
+            </span>
+          </div>
 
           <div className="flex items-center gap-6 text-[11px]">
-            <a href="#kontakt" className="hover:text-white transition-colors">Impressum</a>
-            <a href="#kontakt" className="hover:text-white transition-colors">Datenschutz</a>
+            <a href={getAssetPath('/impressum')} className="hover:text-tennis-accent transition-colors font-medium">
+              Impressum
+            </a>
+            <a href={getAssetPath('/datenschutz')} className="hover:text-tennis-accent transition-colors font-medium">
+              Datenschutz
+            </a>
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-1.5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"

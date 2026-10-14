@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Tennisschule Amir',
     images: [
       {
-        url: 'https://ts-amir.de/images/Logo-Amir.png',
+        url: `${basePath}/images/logo.png`,
         width: 800,
         height: 600,
         alt: 'Tennisschule Amir Logo',
